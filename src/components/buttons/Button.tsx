@@ -2,11 +2,7 @@ import React, { FunctionComponent } from 'react';
 import { Text, TouchableOpacity, StyleSheet, ButtonProps } from 'react-native';
 import { GREEN, WHITE } from '../../common/colors';
 
-interface ButtonState extends ButtonProps {
-  title: string;
-}
-
-const Button: FunctionComponent<ButtonState> = ({ title, ...props }) => {
+const Button: FunctionComponent<ButtonProps> = ({ title, ...props }) => {
   const { btn, titleStyle } = styles;
   return (
     <TouchableOpacity {...props} style={btn}>
@@ -14,6 +10,7 @@ const Button: FunctionComponent<ButtonState> = ({ title, ...props }) => {
     </TouchableOpacity>
   );
 };
+
 const styles = StyleSheet.create({
   btn: {
     marginTop: 10,
