@@ -40,6 +40,11 @@ buck-out/
 \.buckd/
 *.keystore
 !debug.keystore
+android/app/keystores/
+android/app/release/
+
+# ENV
+.env
 
 # fastlane
 #

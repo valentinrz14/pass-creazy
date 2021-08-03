@@ -1,22 +1,22 @@
 import React, { FunctionComponent } from 'react';
-import { Text, TouchableOpacity, StyleSheet } from 'react-native';
-import { GREEN, WHITE } from '../common/colors';
+import { Text, TouchableOpacity, StyleSheet, ButtonProps } from 'react-native';
+import { GREEN, WHITE } from '../../common/colors';
 
-interface ButtonState {
+interface ButtonState extends ButtonProps {
   title: string;
-  onSubmit: () => void;
 }
 
-const Button: FunctionComponent<ButtonState> = ({ title, onSubmit }) => {
+const Button: FunctionComponent<ButtonState> = ({ title, ...props }) => {
   const { btn, titleStyle } = styles;
   return (
-    <TouchableOpacity style={btn} onPress={onSubmit}>
+    <TouchableOpacity {...props} style={btn}>
       <Text style={titleStyle}>{title}</Text>
     </TouchableOpacity>
   );
 };
 const styles = StyleSheet.create({
   btn: {
+    marginTop: 10,
     padding: 10,
     alignItems: 'center',
     backgroundColor: GREEN,
